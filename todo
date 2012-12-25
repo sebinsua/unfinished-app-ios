@@ -1,0 +1,5 @@
+* Add more menu items and ensure that the map does not scroll.
+* Make sure that the menu items cause movement towards the establishment browse thing.
+* Change the width of the nav menu.
+* Grab the GPS co-ordinates from the phone.
+* Tabs of establishments should be scrollable.
