@@ -14,8 +14,23 @@
 {
     [super viewDidLoad];
 
-    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:60.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   if (indexPath.row == 0) {
+        NSString *identifier = @"FirstTop";
+
+        UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+
+        CGRect frame = self.slidingViewController.topViewController.view.frame;
+        self.slidingViewController.topViewController = newTopViewController;
+        self.slidingViewController.topViewController.view.frame = frame;
+        [self.slidingViewController resetTopView];
+    }
+
 }
 
 @end
