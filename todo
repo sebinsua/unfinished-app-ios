@@ -1,2 +1,13 @@
-* Grab the GPS co-ordinates from the phone.
+* Grab the GPS co-ordinates from the phone, use to centre MapKit.
 * Code for scrollable table should be nicer.
+* Go through and pick the correct text. Leave the styling broken.
+* Add extra screens, but leave them blank.
+* Add browse screen --> for categories, then drinks.
+* Drinks screen should have a right-sidebar.
+
+---
+
+At this point most of the screens exist.
+Rename some.
+Refactor some.
+Go back to the UX and to the API design docs to create a sequence diagram, then...
