@@ -21,7 +21,7 @@
     [super viewDidLoad];
 }
 
-// @todo: This is a cheat. The better solution is: http://stackoverflow.com/a/6961973
+// @todo: This is a cheat. The better solution is: http://stackoverflow.com/questions/14042663
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 200.0;
 }
@@ -31,5 +31,10 @@
     return mapView;
 }
 
+// SegueToDrinkCategoryBrowse
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"SegueToDrinkCategoryBrowse" sender:self];
+}
 
 @end
