@@ -1,8 +1,6 @@
 * Grab the GPS co-ordinates from the phone, use to centre MapKit.
-* Leave this to begin with: Code for scrollable table should be nicer.
 * Go through and pick the correct text. Leave the styling broken.
 * Add extra screens, but leave them blank.
-* Add browse screen --> for categories, then drinks.
 * Drinks screen should have a right-sidebar.
 
 ---

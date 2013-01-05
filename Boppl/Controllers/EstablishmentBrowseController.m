@@ -8,8 +8,10 @@
 #import <MapKit/MapKit.h>
 #import "EstablishmentBrowseController.h"
 
-
 @implementation EstablishmentBrowseController
+
+@synthesize mapView;
+@synthesize establishmentsTable;
 
 - (IBAction)revealMenu:(id)sender
 {
@@ -30,6 +32,8 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"View loaded");
+
     CGRect frame = CGRectMake(45.0, 5.0, self.view.bounds.size.width - 50.0, 44.0);
 
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:frame];
@@ -41,26 +45,47 @@
     [button setTitle:@"H" forState:UIControlStateNormal];
     button.frame = CGRectMake(10.0, 10.0, 30.0, 35.0);
 
-    [self.view addSubview:button];
-    [self.view addSubview:searchBar];
+    [self.mapView addSubview:button];
+    [self.mapView addSubview:searchBar];
 
     [super viewDidLoad];
 }
 
-// @todo: This is a cheat. The better solution is: http://stackoverflow.com/questions/14042663
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 200.0;
+// @todo: See: http://stackoverflow.com/questions/14042663
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"Number of Sections");
+    return 1;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 200)];
-    return mapView;
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"Number of Rows");
+    return 15;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Cell for Row ");
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+
+    cell.textLabel.text = @"text";
+    return cell;
 }
 
 // SegueToDrinkCategoryBrowse
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"SegueToDrinkCategoryBrowse" sender:self];
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES]; // Hide this when you click a button
 }
 
 @end
