@@ -62,6 +62,7 @@
     NSLog(@"Number of Rows");
     return 15;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Cell for Row ");
