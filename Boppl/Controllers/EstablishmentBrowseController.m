@@ -34,6 +34,8 @@
 {
     NSLog(@"View loaded");
 
+    self.mapView.showsUserLocation = YES;
+
     CGRect frame = CGRectMake(45.0, 5.0, self.view.bounds.size.width - 50.0, 44.0);
 
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:frame];
@@ -51,7 +53,22 @@
     [super viewDidLoad];
 }
 
-// @todo: See: http://stackoverflow.com/questions/14042663
+- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.005;
+    span.longitudeDelta = 0.005;
+
+    CLLocationCoordinate2D location;
+    location.latitude = aUserLocation.coordinate.latitude;
+    location.longitude = aUserLocation.coordinate.longitude;
+
+    MKCoordinateRegion region;
+    region.span = span;
+    region.center = location;
+
+    [aMapView setRegion:region animated:YES];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSLog(@"Number of Sections");
     return 1;
