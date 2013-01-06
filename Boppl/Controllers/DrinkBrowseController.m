@@ -8,8 +8,6 @@
 #import "DrinkBrowseController.h"
 
 
-@implementation DrinkBrowseController {
-
-}
+@implementation DrinkBrowseController
 
 @end

@@ -16,6 +16,9 @@
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+
+    [self.slidingViewController setAnchorRightRevealAmount:60.0f];
+    self.slidingViewController.underLeftWidthLayout = ECFullWidth;
 }
 
 @end

@@ -16,6 +16,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="221" id="3iy-Cy-k67"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="tzM-eT-ic1" id="HlR-P4-WlH"/>
+                                </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r9v-Ib-jDM">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,19 +136,40 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ED7-tS-z5i"/>
                     <connections>
-                        <segue destination="yw0-y2-SvI" kind="push" identifier="SegueToDrinkBrowse" id="KXt-NO-jmd"/>
+                        <segue destination="mEF-LO-ndv" kind="push" identifier="SegueToDrinkBrowse" id="Ebj-O3-0yz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ume-EF-s58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1331" y="34"/>
         </scene>
+        <!--Drinks Sliding View Controller-->
+        <scene sceneID="Sx5-fx-1MU">
+            <objects>
+                <viewController id="mEF-LO-ndv" customClass="DrinksSlidingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ed-c9-3Ev">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8dz-uL-UxB">
+                        <barButtonItem key="rightBarButtonItem" title="C" id="vy6-n7-hbt">
+                            <connections>
+                                <action selector="revealCheckout:" destination="mEF-LO-ndv" id="s0f-XE-YP9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksi-tX-JkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="34"/>
+        </scene>
         <!--Drink Browse Controller-->
         <scene sceneID="HiB-AK-fIy">
             <objects>
-                <tableViewController id="yw0-y2-SvI" customClass="DrinkBrowseController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DrinkBrowse" id="yw0-y2-SvI" customClass="DrinkBrowseController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wba-oh-ada">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -190,7 +214,71 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Bm-ha-VBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="34"/>
+            <point key="canvasLocation" x="2655" y="34"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="ygc-BC-NnR">
+            <objects>
+                <tableViewController storyboardIdentifier="CheckoutView" id="1tj-5m-G8b" customClass="CheckoutViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Qd-Z8-DxL">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="H4h-7p-SiR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="R1R-Ij-gwX">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQk-LA-qlS">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iQk-LA-qlS" firstAttribute="bottom" secondItem="R1R-Ij-gwX" secondAttribute="bottom" type="default" id="QJ5-lf-tKr"/>
+                                            <constraint firstItem="iQk-LA-qlS" firstAttribute="top" secondItem="R1R-Ij-gwX" secondAttribute="top" type="default" id="dXC-AQ-z59"/>
+                                            <constraint firstItem="iQk-LA-qlS" firstAttribute="trailing" secondItem="R1R-Ij-gwX" secondAttribute="trailing" type="default" id="oGd-uD-gMZ"/>
+                                            <constraint firstItem="iQk-LA-qlS" firstAttribute="leading" secondItem="R1R-Ij-gwX" secondAttribute="leading" type="default" id="piB-x0-0xY"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hmZ-If-bwy">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ahK-RL-SkT">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="1tj-5m-G8b" id="KBx-NE-QtA"/>
+                            <outlet property="delegate" destination="1tj-5m-G8b" id="BYo-nS-pRz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GcZ-l9-kdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3059" y="34"/>
         </scene>
         <!--Initial Sliding View Controller-->
         <scene sceneID="Ysy-Lw-b3i">
@@ -289,11 +377,23 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CheckoutViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckoutViewController.h"/>
+        </class>
         <class className="DrinkBrowseController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DrinkBrowseController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealCheckout:"/>
+            </relationships>
         </class>
         <class className="DrinkCategoryBrowseController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DrinkCategoryBrowseController.h"/>
+        </class>
+        <class className="DrinksSlidingViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrinksSlidingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealCheckout:"/>
+            </relationships>
         </class>
         <class className="ECSlidingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>

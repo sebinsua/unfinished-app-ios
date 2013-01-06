@@ -1,11 +1,13 @@
 //
-// Created by agoodattitude on 25/12/2012.
+// Created by agoodattitude on 05/01/2013.
 //
 // To change the template use AppCode | Preferences | File Templates.
 //
 
+
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 
-@interface MenuViewController : UITableViewController
+
+@interface CheckoutViewController : UITableViewController
 @end

@@ -6,9 +6,8 @@
 
 
 #import <UIKit/UIKit.h>
-
+#import "CheckoutViewController.h"
 
 @interface DrinkBrowseController : UITableViewController
-
 
 @end
