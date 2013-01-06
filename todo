@@ -1,9 +1,7 @@
-* Add extra screens, but leave them blank.
-* Drinks screen should have a right-sidebar.
+* Find out how to have the side bar EVERYWHERE.
+  Is there a nicer way of doing this?
 
 ---
 
-At this point most of the screens exist.
 Rename some.
-Refactor some.
 Go back to the UX and to the API design docs to create a sequence diagram, then...
